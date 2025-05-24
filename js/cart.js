@@ -35,12 +35,12 @@ function renderCart() {
 function makeOrder() {
   if (cart.length === 0) return alert("Cart is empty!");
 
-  let msg = "Hello, I want to order:%0A";
+  let msg = "Hello, I want to order:-\n";
   cart.forEach(p => {
-    msg += `• ${p.name} x ${p.qty} = ₹${p.qty * p.price}%0A`;
+    msg += `• ${p.name} x ${p.qty} = ₹${p.qty * p.price}\n`;
   });
   const total = cart.reduce((sum, p) => sum + p.qty * p.price, 0);
-  msg += `%0ATotal: ₹${total}`;
+  msg += `Total: ₹${total}\n`;
 
   const phone = "919649687305";
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
